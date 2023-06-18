@@ -24,7 +24,7 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       <Button onClick={onToggleModal} theme={ButtonTheme.CLEAR_INVERTED} className={cls.links}>
-        {t('Войти')}
+        {t('Войтии')}
       </Button>
       <Modal isOpen={isAuthModal} onClose={onToggleModal}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, provident.

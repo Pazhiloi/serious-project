@@ -8,7 +8,7 @@ import path from 'path';
 
 export default {
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
   },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -22,7 +22,7 @@ export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
   testEnvironment: "jsdom",
-  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+  coveragePathIgnorePatterns: ["/node_modules/"],
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
   moduleDirectories: ["node_modules"],
   modulePaths: ["<rootDir>src"],
@@ -32,7 +32,9 @@ export default {
   moduleNameMapper: {
     "\\.s?css$": "identity-obj-proxy",
     "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+    "axios": "axios/dist/node/axios.cjs",
   },
+  transformIgnorePatterns: ["node_modules/(?!axios)"],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,

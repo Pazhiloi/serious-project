@@ -11,23 +11,25 @@ export default ({ config }: { config: Configuration }) => {
     src: path.resolve(__dirname, "..", "..", "src"),
   };
 
-  config.resolve?.modules?.push(paths.src);
+  config!.resolve!.modules = [paths.src, "node_modules"];
   config.resolve?.extensions?.push(".ts", ".tsx");
-  
-    config.module!.rules = config.module!.rules!.map((rule: RuleSetRule | any) => {
+  config.module!.rules = config.module!.rules!.map(
+    (rule: RuleSetRule | any) => {
       if (/svg/.test(rule.test as string)) {
         return { ...rule, exclude: /\.svg$/i };
       }
 
       return rule;
-    });
+    }
+  );
+
+  config.resolve!.alias = { "@": paths.src };
 
   config.module?.rules?.push({
     test: /\.svg$/,
     use: ["@svgr/webpack"],
   });
   config.module?.rules?.push(buildCssLoader(true));
-
   config.plugins?.push(
     new DefinePlugin({
       __IS_DEV__: true,

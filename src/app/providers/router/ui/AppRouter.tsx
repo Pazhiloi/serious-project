@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { routeConfig } from 'shared/config/routeConfig/routeConfig';
-import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
+import { routeConfig } from '@/shared/config/routeConfig/routeConfig';
+import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
 
 const AppRouter = () => (
   <div>

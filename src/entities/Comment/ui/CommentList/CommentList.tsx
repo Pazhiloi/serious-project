@@ -12,7 +12,7 @@ interface CommentListProps {
   isLoading?: boolean;
 
 }
-
+ 
 export const CommentList = memo((props: CommentListProps) => {
   const { className, comments, isLoading } = props
   const { t, i18n } = useTranslation();

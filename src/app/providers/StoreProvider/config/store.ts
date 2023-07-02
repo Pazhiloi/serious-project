@@ -11,12 +11,11 @@ import { userReducer } from "@/entities/User";
 import { createReducerManager } from "./reducerManager";
 import { useDispatch } from "react-redux";
 import { $api } from "@/shared/api/api";
-import { NavigateOptions, To } from "react-router-dom";
+
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void
+  asyncReducers?: ReducersMapObject<StateSchema>
 ) {
 
   
@@ -29,7 +28,6 @@ export function createReduxStore(
   const reducerManager = createReducerManager(rootReducers);
   const extraArg : ThunkExtraArg = {
       api: $api,
-       navigate,
   }
   const store = configureStore({
     reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,

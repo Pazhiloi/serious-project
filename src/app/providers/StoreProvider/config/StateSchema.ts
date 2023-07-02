@@ -3,6 +3,7 @@ import { CounterSchema } from "@/entities/Counter";
 import { ProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/AuthByUsername";
+import { ScrollSaveSchema } from "@/features/ScrollSave";
 import { AddCommentFormSchema } from "@/features/addCommentForm";
 import { ArticleDetailsCommentSchema } from "@/pages/ArticleDetailsPage";
 import { ArticlePageSchema } from "@/pages/ArticlesPage";
@@ -12,6 +13,7 @@ import { AxiosInstance } from "axios";
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  scrollSave: ScrollSaveSchema;
 
   // async reducers
   loginForm?: LoginSchema;

@@ -5,10 +5,10 @@ import { UserSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/AuthByUsername";
 import { AddCommentFormSchema } from "@/features/addCommentForm";
 import { ArticleDetailsCommentSchema } from "@/pages/ArticleDetailsPage";
+import { ArticlePageSchema } from "@/pages/ArticlesPage";
 import { AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { NavigateOptions, To } from "react-router-dom";
-
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -20,6 +20,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentSchema;
   addCommentForm?: AddCommentFormSchema;
+  articlePage?: ArticlePageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

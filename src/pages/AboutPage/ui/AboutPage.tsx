@@ -1,13 +1,14 @@
 import { Counter } from '@/entities/Counter';
+import Page from '@/shared/ui/Page/Page';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const AboutPage = () => {
   const { t } = useTranslation('about');
   return (
-    <div>
+    <Page>
       {t('О сайте')}
-    </div>
+    </Page>
   );
 };
 

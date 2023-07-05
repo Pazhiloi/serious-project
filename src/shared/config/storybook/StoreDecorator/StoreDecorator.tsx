@@ -6,6 +6,7 @@ import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
 import { addCommentFormReducer } from '@/features/addCommentForm/model/slices/addCommentFormSlice';
 import { articleDetailsCommnetsReducer } from '@/pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slice';
 
 
 const defaultAsyncReducers: ReducersList = {
@@ -13,8 +14,7 @@ const defaultAsyncReducers: ReducersList = {
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
-  // @ts-expect-error
-  atricleDetailsComments: articleDetailsCommnetsReducer
+  articleDetailsPage: articleDetailsPageReducer
 }
 
 

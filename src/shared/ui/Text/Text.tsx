@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 export enum TextTheme {
   PRIMARY = 'primary',
+  INVERTED = 'inverted',
   ERROR = 'error'
 }
 

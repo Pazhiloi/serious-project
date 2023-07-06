@@ -3,7 +3,7 @@ import { Suspense, memo, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { AppRoutes, routeConfig, AppRouteProps } from '@/shared/config/routeConfig/routeConfig';
-import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
+import { PageLoader } from '@/widgets/PageLoader/PageLoader';
 import RequireAuth from './RequireAuth';
 
 const AppRouter = () => { 

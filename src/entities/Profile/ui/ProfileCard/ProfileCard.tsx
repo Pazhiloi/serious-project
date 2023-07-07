@@ -78,8 +78,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
           </HStack>
         </div>)
         }
-        <Input readonly={readonly} onChange={onChangeFirstname} className={cls.input} value={data?.first} placeholder={t('Ваше Имя')} />
-        <Input readonly={readonly} onChange={onChangeLastname} className={cls.input} value={data?.lastname} placeholder={t('Ваше Фамилия')} />
+        <Input readonly={readonly} onChange={onChangeFirstname} className={cls.input} value={data?.first} placeholder={t('Ваше Имя')} data-testid={'ProfileCard.firstname'} />
+        <Input readonly={readonly} onChange={onChangeLastname} className={cls.input} value={data?.lastname} placeholder={t('Ваше Фамилия')} data-testid={'ProfileCard.lastname'} />
         <Input onKeyPress={onKeyPress} readonly={readonly} onChange={onChangeAge} className={cls.input} value={data?.age} placeholder={t('Ваш Возраст')} />
         <Input readonly={readonly} onChange={onChangeCity} className={cls.input} value={data?.city} placeholder={t('Город')} />
         <Input readonly={readonly} onChange={onChangeUsername} className={cls.input} value={data?.username} placeholder={t('Введите имя пользователя')} />

@@ -15,7 +15,7 @@ export const ArticleEditPage = memo((props: ArticleEditPageProps) => {
   const { id } = useParams<{ id: string }>()
   const isEdit = Boolean(id)
   return (
-    <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
+    <Page className={classNames('', {}, [className])}>
       {isEdit ? t('Article is edited according to ID = ') + id : t('Create a new article')}
     </Page>
   );

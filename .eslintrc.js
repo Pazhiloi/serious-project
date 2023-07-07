@@ -44,7 +44,7 @@ module.exports = {
       "error",
       {
         markupOnly: true,
-        ignoreAttribute: ["data-testid", "to"],
+        ignoreAttribute: ["role", "data-testid", "justify", "direction"],
       },
     ],
     "max-len": [
@@ -59,7 +59,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
-    'no-undef': "off"
+    "no-undef": "off",
   },
   globals: {
     __IS_DEV__: true,
@@ -71,7 +71,7 @@ module.exports = {
       files: ["**/src/**/*.{test,stories}.{ts, tsx}"],
       rules: {
         "i18next/no-literal-string": "off",
-        "max-len": "off"
+        "max-len": "off",
       },
     },
   ],

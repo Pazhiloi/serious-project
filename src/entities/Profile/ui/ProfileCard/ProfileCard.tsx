@@ -9,6 +9,7 @@ import { KeyboardEvent } from 'react';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface ProfileCardProps {
   className?: string;
@@ -45,16 +46,16 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
+      <HStack justify={'center'} max className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
         <Loader />
-      </div>
+      </HStack>
     )
   }
 
   if (error) {
-    return <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+    return <HStack justify={'center'} max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
       <Text align={TextAlign.CENTER} theme={TextTheme.ERROR} title={t('Произошла ошибка при загрузке профиля')} text={t('Попробуйте обновить страницу')} />
-    </div>
+    </HStack>
   }
 
   const onKeyPress = (e: KeyboardEvent) => {
@@ -68,11 +69,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
   }
 
   return (
-    <div className={classNames(cls.ProfileCard, mods, [className])}>
+    <VStack max gap='8' className={classNames(cls.ProfileCard, mods, [className])}>
       <div className={cls.data}>
 
         {data?.avatar && (<div className={cls.avatarWrapper}>
+          <HStack justify={'center'} max>
           <Avatar src={data?.avatar} />
+          </HStack>
         </div>)
         }
         <Input readonly={readonly} onChange={onChangeFirstname} className={cls.input} value={data?.first} placeholder={t('Ваше Имя')} />
@@ -84,6 +87,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
         <CurrencySelect className={cls.input} readonly={readonly} onChange={onChangeCurrency}  value={data?.currency} />
         <CountrySelect className={cls.input} readonly={readonly} onChange={onChangeCountry}  value={data?.country} />
       </div>
-    </div>
+    </VStack>
   );
 };

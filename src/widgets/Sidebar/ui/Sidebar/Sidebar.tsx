@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebaritems';
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { VStack } from '@/shared/ui/Stack';
 interface SidebarProps {
   className?: string;
 }
@@ -40,9 +41,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       ])}
     >
       <Button size={ButtonSize.L} className={cls.collapseBtn} data-testid="sidebar-toggle" type="button" onClick={onToggle} theme={ButtonTheme.BACKGROUND_INVERTED} square >{collapsed ? '>' : '<'}</Button>
-      <div className={cls.items}>
+      <VStack className={cls.items}>
         {itemList}        
-      </div>
+      </VStack>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} className={cls.lang} />

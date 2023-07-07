@@ -2,5 +2,8 @@
 node_modules
 .idea
 /storybook-static
+# loki
 .loki/report.html
 .loki/report.json
+# unit test
+/reports

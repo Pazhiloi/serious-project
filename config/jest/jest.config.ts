@@ -9,8 +9,8 @@ import path from 'path';
 export default {
   globals: {
     __IS_DEV__: true,
-    __API__: '',
-    __PROJECT__: 'jest',
+    __API__: "",
+    __PROJECT__: "jest",
   },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -36,7 +36,20 @@ export default {
     "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
     "^@/(.*)$": "<rootDir>src/$1",
   },
-  // transformIgnorePatterns: ["node_modules/(?!axios)"],
+  reporters: [
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        publicPath: "<rootDir>/reports/unit",
+        filename: "report.html",
+        openReport: true,
+        inlineSource: true,
+      },
+    ],
+  ],
+
+  transformIgnorePatterns: ["node_modules/(?!axios)"],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,

@@ -4,7 +4,7 @@ import { StateSchema } from "@/app/providers/StoreProvider";
 import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
-import { ValidateProfileError } from "../../types/EditableProfileCardSchema";
+import { ValidateProfileError } from "../../const/const";
 
 const data = {
   username: "admin",

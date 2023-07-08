@@ -1,6 +1,6 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { getProfileValidateErrors } from "./getProfileValidateErrors";
-import { ValidateProfileError } from "../../types/EditableProfileCardSchema";
+import { ValidateProfileError } from "../../const/const";
 describe("getProfileValidateErrors", () => {
   test("should return true", () => {
     const state: DeepPartial<StateSchema> = {

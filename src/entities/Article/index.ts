@@ -1,12 +1,13 @@
+
+
+export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
 export {
   ArticleView,
   ArticleSortField,
   ArticleType,
-} from "./model/types/article";
-
-export { ArticleList } from './ui/ArticleList/ArticleList';
-export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
-
+  ArticleBlockType,
+} from "./model/const/articlesConst";
 
 export type { Article } from "./model/types/article";
 export type { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";

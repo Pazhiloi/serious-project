@@ -20,7 +20,7 @@ const reducers: ReducersList = {
   articlePage: articlePageReducer
 }
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
+export const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
   const dispatch = useAppDispatch()
   

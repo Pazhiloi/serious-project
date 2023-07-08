@@ -4,7 +4,9 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 import CopyPlugin from "copy-webpack-plugin";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     new HtmlWebpackPlugin({
@@ -23,7 +25,20 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): w
     new CopyPlugin({
       patterns: [{ from: paths.locales as string, to: paths.buildLocales }],
     }),
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }),
   ];
+  new ForkTsCheckerWebpackPlugin({
+    typescript: {
+      diagnosticOptions: {
+        semantic: true,
+        syntactic: true,
+      },
+      mode: "write-references",
+    },
+  });
   
   if (isDev) {
     plugins.push(new ReactRefreshWebpackPlugin());

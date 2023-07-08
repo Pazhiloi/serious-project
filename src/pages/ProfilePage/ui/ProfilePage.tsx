@@ -18,9 +18,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const {t} = useTranslation()
   const { id } = useParams<{ id: string }>()
 
-  if (!id) {
-    return <Text text={t('Profile is not found')} />
-  }
+  // if (!id) {
+  //   return <Text text={t('Profile is not found')} />
+  // }
   
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

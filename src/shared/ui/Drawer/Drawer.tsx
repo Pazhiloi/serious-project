@@ -93,7 +93,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 });
 
 
-export const Drawer = memo((props: DrawerProps) => {
+export const DrawerAsync = memo((props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs()
 
   if (!isLoaded) {
@@ -102,3 +102,11 @@ export const Drawer = memo((props: DrawerProps) => {
 
   return <DrawerContent {...props} />
 })
+
+export const Drawer = (props: DrawerProps) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  )
+}

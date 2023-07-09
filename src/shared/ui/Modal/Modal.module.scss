@@ -1,4 +1,4 @@
-.Modal{
+.Modal {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -8,11 +8,12 @@
   pointer-events: none;
   z-index: -1;
   color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-.overlay{
+.overlay {
   width: 100%;
   height: 100%;
   background: var(--overlay-color);
@@ -21,7 +22,7 @@
   align-items: center;
 }
 
-.content{
+.content {
   padding: 20px;
   border-radius: 12px;
   background: var(--bg-color);
@@ -29,21 +30,20 @@
   transition: transform 0.3s ease;
   transform: scale(0.5);
   max-width: 60%;
-} 
+}
 
-.opened{
+.opened {
   pointer-events: auto;
   opacity: 1;
   z-index: var(--modal-z-index);
 
-  .content{
+  .content {
     transform: scale(1);
   }
 }
 
-
-.isClosing{
-  .content{
+.isClosing {
+  .content {
     transform: scale(0.2);
   }
 }

@@ -6,7 +6,7 @@ import { useTheme } from '@/app/providers/ThemeProvider';
 import { Portal } from '../Portal/Portal';
 import Overlay from '../Overlay/Overlay';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 interface DrawerProps {
   className?: string;
   children: ReactNode;

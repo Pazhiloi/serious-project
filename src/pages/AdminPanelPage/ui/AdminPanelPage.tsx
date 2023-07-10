@@ -1,4 +1,4 @@
-import Page from '@/widgets/Page/Page'
+import {Page} from '@/widgets/Page'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 

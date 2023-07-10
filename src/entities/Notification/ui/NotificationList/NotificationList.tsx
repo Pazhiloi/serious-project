@@ -3,7 +3,7 @@ import cls from './NotificationList.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useNotification } from '../../api/notificationApi';
 import { VStack } from '@/shared/ui/Stack';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import NotificationItem from '../NotificationItem/NotificationItem';
 interface NotificationListProps {
   className?: string;

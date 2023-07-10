@@ -23,6 +23,8 @@
   },
   "include": [
     "./config/jest/setupTests.ts",
+    "scripts/refactoring/updateimports.ts",
+    "scripts/refactoring/createPublicApiForSharedUI.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
   ],

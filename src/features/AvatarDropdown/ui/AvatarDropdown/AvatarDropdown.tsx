@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { Dropdown } from '@/shared/ui/Popups';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router'
 interface AvatarDropdownProps {
   className?: string;
 }
@@ -22,7 +22,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   const isAdmin = useSelector(isUserAdmin)
   const isManager = useSelector(isUserManager)
 
-  // for logout
+  // for logoutA
   const onLogout = useCallback(() => {
     dispatch(userActions.logout())
   }, [dispatch])
@@ -41,12 +41,12 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         ...(isAdminPanelAvailable
           ? [{
             content: t('Admin Panel'),
-            href: RoutePath.admin_panel
+            href: getRouteAdmin()
           }]
           : []),
         {
           content: t('Profile'),
-          href: `${RoutePath.profile}/${authData.id}`
+          href: getRouteProfile(authData.id)
         },
         {
           content: t('Log out'),

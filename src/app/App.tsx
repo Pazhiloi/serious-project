@@ -5,8 +5,10 @@ import { Suspense, useEffect } from 'react';
 import { AppRouter } from './providers/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserInited, userActions } from '@/entities/User';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 const App = () => {
+  const {theme} = useTheme()
   const dispatch = useDispatch()
   const inited = useSelector(getUserInited) ;
   useEffect(() => {

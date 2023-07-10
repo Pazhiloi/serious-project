@@ -1,4 +1,4 @@
-import { Modal } from '@/shared/ui/Modal/Modal';
+import { Modal } from '@/shared/ui/Modal';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Suspense } from 'react';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';

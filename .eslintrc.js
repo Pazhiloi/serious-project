@@ -18,7 +18,14 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+    "plugin",
+    "unused-imports",
+  ],
   rules: {
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
@@ -53,8 +60,10 @@ module.exports = {
           "align",
           "gap",
           "target",
-          "border"
+          "border",
         ],
+        "react/display-name": "off",
+        "@typescript-eslint/prefer-includes": "off",
       },
     ],
     "max-len": [
@@ -68,6 +77,26 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
+    "unused-imports/no-unused-imports": "error",
+    "plugin/path-checker": ["error", { alias: "@" }],
+    "plugin/public-api-imports": [
+      "error",
+      {
+        alias: "@",
+        testFilesPatterns: [
+          "**/*.test.*",
+          "**/*.story.*",
+          "**/StoreDecorator.tsx",
+        ],
+      },
+    ],
+    "plugin/layer-plugin": [
+      "error",
+      {
+        alias: "@",
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+      },
+    ],
     "no-param-reassign": "off",
     "no-undef": "off",
   },

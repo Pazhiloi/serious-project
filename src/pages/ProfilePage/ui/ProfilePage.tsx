@@ -1,11 +1,11 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { useTranslation } from 'react-i18next';
-import Page from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page'
 import { VStack } from '@/shared/ui/Stack';
-import { EditableProfileCard, profileReducer } from '@/features/EditableProfileCard';
+import { EditableProfileCard } from '@/features/EditableProfileCard';
 import { useParams } from 'react-router-dom';
-import { Text } from '@/shared/ui/Text/Text';
+import { profileReducer } from '@/features/EditableProfileCard/testing';
 
 const reducers: ReducersList = {
   profile: profileReducer

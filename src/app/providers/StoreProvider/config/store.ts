@@ -1,7 +1,6 @@
 import {
   CombinedState,
   configureStore,
-  getDefaultMiddleware,
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";

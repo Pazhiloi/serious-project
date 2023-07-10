@@ -1,14 +1,14 @@
 /* eslint-disable i18next/no-literal-string */
 import { Suspense, memo, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { AppRoutes, routeConfig, AppRouteProps } from '@/shared/config/routeConfig/routeConfig';
-import { PageLoader } from '@/widgets/PageLoader/PageLoader';
 import RequireAuth from './RequireAuth';
+import { PageLoader } from '@/widgets/PageLoader';
+import { AppRoutesProps } from '@/shared/types/router';
+import { routeConfig } from '../config/routeConfig';
 
 const AppRouter = () => { 
   const renderWithWrapper = useCallback(
-    (route: AppRouteProps) => {
+    (route: AppRoutesProps) => {
       const element = (
         <Suspense fallback={<PageLoader />}>
           {route.element}

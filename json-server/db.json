@@ -721,5 +721,58 @@
       "username": "user",
       "avatar": "https://cdn.britannica.com/81/191581-050-8C0A8CD3/Alan-Turing.jpg"
     }
+  ],
+   "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "IHiZAdr"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 2,
+      "feedback": "check",
+      "id": "_UKLkmP"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 5,
+      "feedback": "good",
+      "id": "FnaIRH6"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }

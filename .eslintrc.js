@@ -17,6 +17,7 @@ module.exports = {
     },
     ecmaVersion: "latest",
     sourceType: "module",
+    project: ["tsconfig.json", "./cypress/tsconfig.json"],
   },
   plugins: [
     "react",
@@ -64,6 +65,8 @@ module.exports = {
         ],
         "react/display-name": "off",
         "@typescript-eslint/prefer-includes": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/method-signature-style": "off",
       },
     ],
     "max-len": [

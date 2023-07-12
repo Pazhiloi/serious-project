@@ -6,7 +6,7 @@ import { Skeleton } from '../Skeleton';
 import UserIcon from '../../assets/icons/user-filled.svg'
 import { AppImage } from '../AppImage';
 
-interface AvatarProps {
+interface AvatarProps  {
   className?: string;
   src?: string;
   alt?: string;

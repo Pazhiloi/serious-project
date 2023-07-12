@@ -9,7 +9,7 @@ import {
 import { PayloadAction, createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import { ArticlePageSchema } from "../types/articlePageSchema";
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
-import { SortOrder } from "@/shared/types";
+import { SortOrder } from "@/shared/types/sort";
 
 const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,

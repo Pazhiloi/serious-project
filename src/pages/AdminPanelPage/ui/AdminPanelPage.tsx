@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 const AdminPanelPage = () => {
   const { t, i18n } = useTranslation('about')
   return (
-    <Page>
+    <Page data-testid={'AdminPanelPage'}>
       {t('Admin panel')}
     </Page>
   )

@@ -1,4 +1,4 @@
-import {MutableRefObject, ReactNode, UIEvent, memo, useRef} from 'react'
+import { MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react'
 import cls from './Page.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
@@ -9,7 +9,8 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { getSaveScrollByPath, scrollSaveAction } from '@/features/ScrollSave';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
-interface PageProps {
+import { TestProps } from '@/shared/types/tests';
+interface PageProps extends TestProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
@@ -42,7 +43,12 @@ export const Page = memo((props: PageProps) => {
   }, 500)
 
   return (
-    <section id={PAGE_ID} onScroll={onScroll} ref={wrapperRef} className={classNames(cls.Page, {}, [className])}>
+    <section
+      id={PAGE_ID}
+      onScroll={onScroll}
+      ref={wrapperRef}
+      className={classNames(cls.Page, {}, [className])}
+      data-testid={props['data-testid'] ?? 'Page'}>
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </section>

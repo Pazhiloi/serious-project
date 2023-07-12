@@ -6,4 +6,4 @@ node_modules
 .loki/report.html
 .loki/report.json
 # unit test
-/reports
+/reports/unit

@@ -25,6 +25,7 @@
     "./config/jest/setupTests.ts",
     "scripts/refactoring/updateimports.ts",
     "scripts/refactoring/createPublicApiForSharedUI.ts",
+    "scripts/refactoring/createReadme.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
   ],

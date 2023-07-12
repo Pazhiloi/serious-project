@@ -1,30 +1,30 @@
-import {HTMLAttributeAnchorTarget, memo, useCallback} from 'react'
-import cls from './ArticleListItem.module.scss';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Article,  ArticleTextBlock  } from '../../model/types/article';
-import { useTranslation } from 'react-i18next';
-import { Text } from '@/shared/ui/Text';
-import { Icon } from '@/shared/ui/Icon';
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
-import { Card } from '@/shared/ui/Card';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { ArticleBlockType, ArticleView } from '../../model/const/articlesConst';
+import { Article, ArticleTextBlock } from '../../model/types/article'
+import { ArticleBlockType, ArticleView } from '../../model/const/articlesConst'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Text } from '@/shared/ui/Text'
+import { Icon } from '@/shared/ui/Icon'
+import { Card } from '@/shared/ui/Card'
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { getRouteArticleDetails } from '@/shared/const/router'
-interface ArticleListItemProps {
-  className?: string;
-  article: Article;
-  view: ArticleView;
-  target?: HTMLAttributeAnchorTarget;
-}
+import { AppLink } from '@/shared/ui/AppLink'
+import { AppImage } from '@/shared/ui/AppImage'
+import cls from './ArticleListItem.module.scss'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
+interface ArticleListItemProps {
+  className?: string
+  article: Article
+  view: ArticleView
+  target?: HTMLAttributeAnchorTarget
+}
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { className, article, view, target } = props
   const { t, i18n } = useTranslation('article')
- 
-
   const types = <Text text={article.type.join(', ')} className={cls.types} />
   const views = (
     <>
@@ -32,11 +32,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <Icon Svg={EyeIcon} />
     </>
   )
-
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find(
       (block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
-
     return (
       <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
         <Card className={cls.card}>
@@ -47,7 +45,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           </div>
           <Text title={article.title} className={cls.title} />
           {types}
-          <img src={article.img} className={cls.img} alt={article.title} />
+          <AppImage
+            src={article.img}
+            className={cls.img}
+            alt={article.title}
+            fallback={<Skeleton width="100%" height={250} />}
+          />
           {textBlock && (
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
           )}
@@ -63,7 +66,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       </div>
     )
   }
-
   return (
     <AppLink
       target={target}
@@ -71,7 +73,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
-          <img alt={article.title} src={article.img} className={cls.img} />
+          <AppImage
+            alt={article.title}
+            src={article.img}
+            className={cls.img}
+            fallback={<Skeleton width={200} height={200} />}
+          />
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>

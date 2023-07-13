@@ -1,1 +1,1 @@
-export { ArticleSortSelector } from "./ui/ArticleSortSelector";
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';

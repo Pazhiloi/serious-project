@@ -1,54 +1,50 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme'
-import ProfilePage from './ProfilePage';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import ProfilePage from './ProfilePage';
+import { Theme } from '@/shared/const/theme';
 
 export default {
-  title: 'pages/ProfilePage',
-  component: ProfilePage,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+    title: 'pages/ProfilePage',
+    component: ProfilePage,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args: any) => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
+Normal.args = {};
 Normal.decorators = [StoreDecorator({
-  profile: {
-    form: {
-      username: 'admin',
-      age: 22,
-      country: Country.Ukraine,
-      lastname: 'ulbi tv',
-      first: 'asd',
-      city: 'aboba',
-      currency: Currency.USD,
-    }
-  }
-})]
+    profile: {
+        form: {
+            username: 'admin',
+            age: 22,
+            country: Country.Ukraine,
+            lastname: 'ulbi tv',
+            first: 'asd',
+            city: 'asf',
+            currency: Currency.USD,
+        },
+    },
+})];
+
 export const Dark = Template.bind({});
-Dark.args = {
-};
-
+Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  profile: {
-    form: {
-      username: 'admin',
-      age: 22,
-      country: Country.Ukraine,
-      lastname: 'ulbi tv',
-      first: 'asd',
-      city: 'aboba',
-      currency: Currency.USD,
-    }
-  }
-})]
-
-
+    profile: {
+        form: {
+            username: 'admin',
+            age: 22,
+            country: Country.Ukraine,
+            lastname: 'ulbi tv',
+            first: 'asd',
+            city: 'asf',
+            currency: Currency.USD,
+        },
+    },
+})];

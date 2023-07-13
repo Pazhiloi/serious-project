@@ -1,14 +1,15 @@
-import {Page} from '@/widgets/Page'
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Page } from '@/widgets/Page';
 
 const AdminPanelPage = () => {
-  const { t, i18n } = useTranslation('about')
-  return (
-    <Page data-testid={'AdminPanelPage'}>
-      {t('Admin panel')}
-    </Page>
-  )
-}
+    const { t } = useTranslation('about');
 
-export default AdminPanelPage
+    return (
+        <Page data-testid="AdminPanelPage">
+            {t('Админ панель')}
+        </Page>
+    );
+};
+
+export default AdminPanelPage;

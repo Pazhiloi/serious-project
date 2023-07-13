@@ -1,5 +1,5 @@
 .BIG {
- .views {
+    .views {
         margin-left: auto;
     }
 
@@ -30,7 +30,7 @@
     .footer {
         display: flex;
         align-items: center;
-     margin-top: 16px;
+        margin-top: 16px;
     }
 
     .textBlock {
@@ -70,12 +70,6 @@
         width: 200px;
         height: 200px;
         object-fit: cover;
-    }
-
-    .date {
-        position: absolute;
-        right: 0;
-        top: 0;
     }
 
     .infoWrapper {

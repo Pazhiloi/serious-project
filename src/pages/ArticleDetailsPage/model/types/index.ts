@@ -1,7 +1,7 @@
-import { ArticleDetailsCommentSchema } from "./ArticleDetailsCommentSchema";
-import { ArticleDetaisPageRecommendationsSchema } from "./ArticleDetaisPageRecommendationsSchema";
+import { ArticleDetailsCommentsSchema } from './ArticleDetailsCommentsSchema';
+import { ArticleDetailsRecommendationsSchema } from './ArticleDetailsRecommendationsSchema';
 
 export interface ArticleDetailsPageSchema {
-  comments: ArticleDetailsCommentSchema;
-  recommendations: ArticleDetaisPageRecommendationsSchema;
+    comments: ArticleDetailsCommentsSchema;
+    recommendations: ArticleDetailsRecommendationsSchema;
 }

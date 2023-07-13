@@ -1,19 +1,19 @@
 .title {
-  font: var(--font-l);
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
+
 .text {
-  font: var(--font-m);
-  color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .error {
-  .title {
-    color: var(--red-light);
-  }
-  .text {
-    color: var(--red-dark);
-  }
+    .title {
+        color: var(--red-light);
+    }
+
+    .text {
+        color: var(--red-dark);
+    }
 }
 
 .inverted {
@@ -22,18 +22,30 @@
     }
 
     .text {
-        color: var(--inverted-seondary-color);
+        color: var(--inverted-secondary-color);
     }
 }
 
-.left{
-  text-align: left;
+.left {
+    text-align: left;
 }
-.right{
-  text-align: right;
+
+.right {
+    text-align: right;
 }
-.center{
-  text-align: center;
+
+.center {
+    text-align: center;
+}
+
+.size_s {
+    .title {
+        font: var(--font-m);
+    }
+
+    .text {
+        font: var(--font-s);
+    }
 }
 
 .size_m {
@@ -53,15 +65,5 @@
 
     .text {
         font: var(--font-l);
-    }
-}
-
-.size_xl {
-    .title {
-        font: var(--font-xl);
-    }
-
-    .text {
-        font: var(--font-xl);
     }
 }

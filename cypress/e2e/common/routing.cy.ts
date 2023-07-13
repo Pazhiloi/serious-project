@@ -1,32 +1,32 @@
-import { selectByTestId } from "cypress/helpers/selectByTestId";
+import { selectByTestId } from '../../helpers/selectByTestId';
 
-describe("routing", () => {
-  describe("user is not authed", () => {
-    it("navigate to the main page", () => {
-      cy.visit("/");
-      cy.get(selectByTestId("MainPage")).should("exist");
+describe('Роутинг', () => {
+    describe('Пользователь НЕ авторизован', () => {
+        it('Переход на главную страницу', () => {
+            cy.visit('/');
+            cy.get(selectByTestId('MainPage')).should('exist');
+        });
+        it('Переход открывает страницу профиля', () => {
+            cy.visit('/profile/1');
+            cy.get(selectByTestId('MainPage')).should('exist');
+        });
+        it('Переход открывает несуществующий маршрут ', () => {
+            cy.visit('/fasfasfasf');
+            cy.get(selectByTestId('NotFoundPage')).should('exist');
+        });
     });
-    it("navigate to the profile page", () => {
-      cy.visit("/profile/1");
-      cy.get(selectByTestId("MainPage")).should("exist");
-    });
-    it("navigate to the unexist router", () => {
-      cy.visit("/prdsdsdsdsdsdsd");
-      cy.get(selectByTestId("NotFoundPage")).should("exist");
-    });
-  });
-  describe("user is authed", () => {
-    beforeEach(() => {
-      cy.login();
-    });
-    it("navigate to the profile page", () => {
-      cy.visit("/profile/1");
-      cy.get(selectByTestId("ProfilePage")).should("exist");
-    });
+    describe('Пользователь авторизован', () => {
+        beforeEach(() => {
+            cy.login();
+        });
+        it('Переход открывает страницу профиля', () => {
+            cy.visit('/profile/1');
+            cy.get(selectByTestId('ProfilePage')).should('exist');
+        });
 
-    it("navigate to the article list", () => {
-      cy.visit("articles");
-      cy.get(selectByTestId("ArticlesPage")).should("exist");
+        it('Переход открывает страницу со списком статей', () => {
+            cy.visit('/articles');
+            cy.get(selectByTestId('ArticlesPage')).should('exist');
+        });
     });
-  });
 });

@@ -37,7 +37,7 @@ const reducers: ReducersList = {
    }, [onCommentTextChange, onSendComment, text])
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <HStack justify='between' max className={classNames(cls.AddCommentForm, {}, [className])}>
+      <HStack data-testid='AddCommentForm' justify='between' max className={classNames(cls.AddCommentForm, {}, [className])}>
       <Input
         className={cls.input}
         placeholder={t('Write a comment')}

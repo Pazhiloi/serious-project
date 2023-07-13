@@ -53,7 +53,8 @@ export const Flex = memo((props: FlexProps) => {
     align = 'center',
     direction = 'row',
     gap,
-    max 
+    max,
+    ...otherProps 
   } = props;
   const { t, i18n } = useTranslation();
 
@@ -69,7 +70,7 @@ export const Flex = memo((props: FlexProps) => {
     [cls.max]: max
   }
   return (
-    <div className={classNames(cls.Flex, mods, classes)}>
+    <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
       {children}
     </div>
   );

@@ -102,6 +102,7 @@ module.exports = {
     ],
     "no-param-reassign": "off",
     "no-undef": "off",
+    'react/no-unstable-nested-components': 'warning'
   },
   globals: {
     __IS_DEV__: true,

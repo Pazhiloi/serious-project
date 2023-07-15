@@ -20,6 +20,8 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     const canEdit = useSelector(getCanEditArticle);
     const article = useSelector(getArticleDetailsData);
 
+  console.log('OLD')
+
     const onBackToList = useCallback(() => {
         navigate(getRouteArticles());
     }, [navigate]);

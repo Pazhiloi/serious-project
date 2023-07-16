@@ -62,6 +62,7 @@ module.exports = {
           "gap",
           "target",
           "border",
+          "feature"
         ],
         "react/display-name": "off",
         "@typescript-eslint/prefer-includes": "off",

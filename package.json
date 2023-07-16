@@ -27,10 +27,11 @@
     "storybook:build": "build-storybook -c ./config/storybook",
     "prepare": "husky install",
     "postinstall": "rm -rf ./node_modules/.cache",
-    "lint-staged": {
-      "**/*.{ts,tsx}": "eslint"
-    }
+    "remove-feature": "ts-node ./scripts/remove-feature.ts"
   },
+  "lint-staged": {
+      "**/*.{ts,tsx}": "eslint"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
